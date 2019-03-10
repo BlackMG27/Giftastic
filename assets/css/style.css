@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+
 .wrapper {
     max-width: 1050px;
     margin: 0 auto;
@@ -7,6 +9,8 @@
 .wrapper h1 {
     font-size: 2.5rem;
     margin-bottom: 2%;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
 }
 
 .travel-button {
@@ -38,6 +42,15 @@
 input {
     width: 400px;
     padding: 10px;
+}
+
+label {
+    font-size: 1.15rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#gifNumber {
+    font-size: 1rem;
 }
 
 #addButton,
@@ -80,11 +93,30 @@ input {
     text-align: center;
     font-size: 1.15rem;
     line-height: 1.5rem;
-
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times,
+        serif;
+    font-weight: 700;
 }
 
 .gif-source {
     text-decoration: none;
+    font-family: 'Playfair Display',
+        Georgia,
+        'Times New Roman',
+        Times,
+        serif;
+    font-size: 1rem;
+}
+
+.gif-rating {
+    font-family: 'Playfair Display',
+        Georgia,
+        'Times New Roman',
+        Times,
+        serif;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 700px) {

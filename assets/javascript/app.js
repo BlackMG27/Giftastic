@@ -15,12 +15,13 @@ var topics = [
 ];
 //get the API key
 var apiKey = 'e5UhuCrvRo33JUw8QgzmmzROGcglreVt';
-//grab the number of gifs
-var numGifs = $('#addNumber')
-    .val()
-    .trim();
-//get the api
-var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=' + apiKey + '&limit=' + numGifs;
+//set a gifnumber
+
+var gifNumber;
+function getGifNumber() {
+    gifNumber = $('#gifNumber option:selected').text();
+    console.log(gifNumber);
+}
 
 //get the buttons onto the screen
 function buttonsToScreen() {
@@ -61,8 +62,9 @@ $('#addButton')
 function displayGifs() {
     //get the 'q' from the button
     var travel = $(this).attr('data-name');
+    getGifNumber();
     //get the api
-    var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=' + travel + '&api_key=' + apiKey + '&limit=' + numGifs;
+    var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=' + travel + '&api_key=' + apiKey + '&limit=' + gifNumber;
     //empty the travel gifs
     $('#travelGifs').empty();
     //set the ajax
@@ -129,9 +131,10 @@ function animateGifs() {
         $(this).attr('src', $(this).data().still);
     }
 }
-
+//calls the buttonsToScreen function
 buttonsToScreen();
 //has the button work on click to activate function
 $(document).on('click', '.travel-button', displayGifs);
 //same but with gifs
 $(document).on('click', '.gif', animateGifs);
+$('#gifNumber').on('change', getGifNumber);

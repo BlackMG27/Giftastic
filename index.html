@@ -18,8 +18,17 @@
         <form>
             <input type="text" id="addButtonText" placeholder="Where would you like to visit?">
             <button id="addButton">Add Location</button>
-            <input type="number" id='addNumber' placeholder="How many Gifs would you like?">
-            <button id="addNumberButton">Add Gifs</button>
+            <label for="gifNumber">Number of Gifs:</label>
+            <select name="gifNumber" id="gifNumber">
+                <option value="10" id="gif10">10</option>
+                <option value="20" id="gif20">20</option>
+                <option value="30" id="gif30">30</option>
+                <option value="40" id="gif40">40</option>
+                <option value="50" id="gif50">50</option>
+                <option value="60" id="gif60">60</option>
+                <option value="70" id="gif70">70</option>
+            </select>
+
         </form>
         <div id="travelGifs"></div>
     </div>
