@@ -15,8 +15,12 @@ var topics = [
 ];
 //get the API key
 var apiKey = 'e5UhuCrvRo33JUw8QgzmmzROGcglreVt';
+//grab the number of gifs
+var numGifs = $('#addNumber')
+    .val()
+    .trim();
 //get the api
-var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=' + apiKey + '&limit=10';
+var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=' + apiKey + '&limit=' + numGifs;
 
 //get the buttons onto the screen
 function buttonsToScreen() {
@@ -45,12 +49,12 @@ $('#addButton')
         var travelPlace = $('#addButtonText')
             .val()
             .trim();
-        //checks to see if there are any spaces
-        var travelCheck = travelPlace.replace(/ /g, '+');
         //push into topics array
         topics.push(travelPlace);
         //call on the buttons to screen function
         buttonsToScreen();
+        //empties the input
+        $('#addButtonText').text(' ');
 
     })
 
@@ -58,7 +62,7 @@ function displayGifs() {
     //get the 'q' from the button
     var travel = $(this).attr('data-name');
     //get the api
-    var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=' + travel + '&api_key=' + apiKey + '&limit=10';
+    var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=' + travel + '&api_key=' + apiKey + '&limit=' + numGifs;
     //empty the travel gifs
     $('#travelGifs').empty();
     //set the ajax

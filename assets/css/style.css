@@ -40,7 +40,8 @@ input {
     padding: 10px;
 }
 
-#addButton {
+#addButton,
+#addNumberButton {
     font-size: 1.15rem;
     padding: 10px 30px;
     background: none;
@@ -49,13 +50,15 @@ input {
     transition: .25s;
 }
 
-#addButton:hover {
+#addButton:hover,
+#addNumberButton:hover {
     background-color: rgb(50, 1, 94);
     color: rgb(255, 211, 198);
     transition: .25s;
 }
 
-#addButtonText {
+#addButtonText,
+#addNumber {
     font-size: 1.15rem;
 }
 
@@ -82,4 +85,14 @@ input {
 
 .gif-source {
     text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+    #travelButtons {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
 }
