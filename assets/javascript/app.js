@@ -100,7 +100,7 @@ function displayGifs() {
 
                 var displayRating = $('<h5>');
                 displayRating.addClass('gif-rating');
-                displayRating.text(rating);
+                displayRating.text('Rated: ' + rating);
 
                 var displaySource = $('<a>');
                 displaySource.attr('href', source);
