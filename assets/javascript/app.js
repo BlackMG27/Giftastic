@@ -2,7 +2,7 @@
 var topics = [
     'Paris',
     'Rome',
-    'Sienna',
+    'Italy',
     'Beijing',
     'Tokyo',
     'Seoul',
@@ -16,8 +16,8 @@ var topics = [
 //get the API key
 var apiKey = 'e5UhuCrvRo33JUw8QgzmmzROGcglreVt';
 //set a gifnumber
-
 var gifNumber;
+//gets the gifnumber from the selection list
 function getGifNumber() {
     gifNumber = $('#gifNumber option:selected').text();
     console.log(gifNumber);
@@ -63,10 +63,12 @@ function displayGifs() {
     //get the 'q' from the button
     var travel = $(this).attr('data-name');
     getGifNumber();
-    //get the api
+    //get and set the giphy api
     var giphyURL = 'https://api.giphy.com/v1/gifs/search?q=' + travel + '&api_key=' + apiKey + '&limit=' + gifNumber;
     //empty the travel gifs
     $('#travelGifs').empty();
+    //empty the info div
+    $('#travelInfo').empty();
     //set the ajax
     $
         .ajax({url: giphyURL, method: 'GET'})
@@ -111,6 +113,7 @@ function displayGifs() {
 
             }
         })
+
 }
 //animates the gifs. got it from the class activity
 function animateGifs() {
