@@ -55,7 +55,7 @@ $('#addButton')
         //call on the buttons to screen function
         buttonsToScreen();
         //empties the input
-        $('#addButtonText').text(' ');
+        $('#addButtonText').val('');
 
     })
 
